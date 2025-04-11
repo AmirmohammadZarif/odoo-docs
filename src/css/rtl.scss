@@ -1,0 +1,59 @@
+[dir='rtl'] {
+  // General RTL adjustments
+  text-align: right;
+
+  // Navbar adjustments
+  .navbar__items {
+    flex-direction: row-reverse;
+  }
+
+  .navbar__item {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  // Sidebar adjustments
+  .menu__list {
+    padding-right: 0;
+    padding-left: 1rem;
+  }
+
+  // Code blocks
+  .prism-code {
+    direction: ltr;
+    text-align: left;
+  }
+
+  // Tables
+  table {
+    direction: rtl;
+  }
+
+  // Lists
+  ul, ol {
+    padding-right: 0;
+    padding-left: 2rem;
+  }
+
+  // Footer
+  .footer__links {
+    flex-direction: row-reverse;
+  }
+
+  // Doc sidebar
+  .theme-doc-sidebar-container {
+    border-right: none;
+    border-left: 1px solid var(--ifm-toc-border-color);
+  }
+
+  // Pagination
+  .pagination-nav {
+    flex-direction: row-reverse;
+  }
+
+  // Search
+  .DocSearch-Button {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+} 

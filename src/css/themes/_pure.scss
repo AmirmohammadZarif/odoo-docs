@@ -1,0 +1,126 @@
+// Create a file `pure.scss` to override settings
+
+$light-theme: (
+  color-primary: rgb(130, 8, 27),
+  color-primary-dark: rgb(130, 8, 27),
+  color-primary-darker: rgb(130, 8, 27),
+  color-primary-darkest: rgb(130, 8, 27),
+  color-primary-light: rgb(130, 8, 27),
+  color-primary-lighter: rgb(130, 8, 27),
+  color-primary-lightest: rgb(130, 8, 27),
+  color-background: rgb(255, 255, 255),
+  navbar-background-color: #fff,
+  background-surface-color: #fff,
+  code-background-color: rgba(15, 23, 42, 0.05),
+);
+
+$dark-theme: (
+  color-primary: rgb(231, 86, 107),
+  color-primary-dark: rgb(231, 86, 107),
+  color-primary-darker: rgb(231, 86, 107),
+  color-primary-darkest: rgb(231, 86, 107),
+  color-primary-light: rgb(231, 86, 107),
+  color-primary-lighter: rgb(231, 86, 107),
+  color-primary-lightest: rgb(231, 86, 107),
+  color-background: rgb(19, 19, 19),
+  navbar-background-color: rgb(24, 10, 11),
+  background-surface-color: rgb(42, 15, 15),
+  dropdown-background-color: rgb(46, 34, 34),
+  code-background-color: rgba(255, 255, 255, 0.15),
+);
+
+
+@import "theme_base";
+
+
+:root {
+  --ifm-toc-border-color: rgba(255, 255, 255, 0);
+  --ifm-global-shadow-lw: 0 0 0 0 rgba(0, 0, 0, 0);
+  --ifm-background-color: #{map.get($light-theme, "color-background")};
+  --ifm-background-surface-color: #{map.get(
+      $light-theme,
+      "background-surface-color"
+    )};
+  --ifm-code-background: #{map.get($light-theme, "code-background-color")};
+  .theme-code-block {
+    border: solid 1px rgba(248, 250, 252, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  [class^="codeBlockTitle_"] {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  .breadcrumbs__link {
+    background-color: rgba(0, 0, 0, 0) !important;
+    &:hover {
+      background-color: rgba(15, 23, 42, 0.05) !important;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  --ifm-toc-border-color: rgba(255, 255, 255, 0);
+  --ifm-background-color: #{map.get($dark-theme, "color-background")} !important;
+  --ifm-background-surface-color: #{map.get(
+      $dark-theme,
+      "background-surface-color"
+    )};
+  --ifm-dropdown-background-color: #{map.get(
+      $dark-theme,
+      "dropdown-background-color"
+    )};
+  --ifm-code-background: #{map.get($dark-theme, "code-background-color")};
+  .theme-code-block {
+    border: solid 1px rgba(248, 250, 252, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .breadcrumbs__link {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+}
+
+:root .navbar {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.85);
+  border-bottom: rgba(15, 23, 42, 0.1) solid 1px;
+  @include firefox-only {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  &.navbar-sidebar--show {
+    backdrop-filter: none;
+  }
+}
+
+[data-theme="dark"] .navbar {
+  backdrop-filter: blur(8px);
+  background-color: rgba(12, 11, 11, 0.6);
+  border-bottom: rgba(248, 250, 252, 0.1) solid 1px;
+  @include firefox-only {
+    backdrop-filter: none;
+    background-color: rgba(15, 23, 42, 0.95);
+  }
+}
+
+
+// Fonts
+
+@media screen and (max-width: 996px) {
+  :root {
+    --ifm-font-size-base: 16px;
+  }
+  article h1 {
+    font-size: 2rem !important;
+  }
+}
+
+@media screen and (min-width: 997px) {
+  :root {
+    --ifm-font-size-base: 16px;
+  }
+  article h1 {
+    font-size: 2.5rem !important;
+  }
+}
