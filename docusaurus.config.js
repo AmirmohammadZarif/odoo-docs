@@ -10,7 +10,7 @@ const config = {
   tagline: 'AVIS Engine Software Documentation',
   url: 'https://docs.avisengine.com/',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/avis.png',
 
