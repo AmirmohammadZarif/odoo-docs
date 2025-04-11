@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AVIS Engine Docs',
-  tagline: 'AVIS Engine Software Documentation',
-  url: 'https://docs.avisengine.com/',
+  title: 'مستندات سامانه آویس',
+  tagline: '',
+  url: 'https://odoo-docs-sage.vercel.app/docs/intro',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
